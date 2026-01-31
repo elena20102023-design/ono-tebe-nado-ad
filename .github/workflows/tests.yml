@@ -9,14 +9,11 @@ on:
 
 jobs: 
   tests:
-    # Пропускаем весь job, если репозиторий приватный
     if: github.event.repository.private != true
-    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
       - name: Run tests
         uses: Yandex-Practicum/test-project-action@v1
         with:
